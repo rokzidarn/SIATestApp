@@ -77,6 +77,14 @@ public class DatabaseSeeder {
         c3.setName("Sunglasses");
         categoryRepository.save(c3);
 
+        Category c4 = new Category();
+        c4.setName("Shirts");
+        categoryRepository.save(c4);
+
+        Category c5 = new Category();
+        c5.setName("Socks");
+        categoryRepository.save(c5);
+
         Item i1 = new Item();
         i1.setName("Nike Foamposite X1");
         i1.setPrice(120);

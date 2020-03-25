@@ -44,9 +44,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/add/item").permitAll() // TODO: .hasRole("USER")
             .antMatchers("/delete/item/*").permitAll()
 
+            .antMatchers("/api").permitAll()
+            .antMatchers("/api/*").permitAll()
+
             .antMatchers("/").permitAll()
             .antMatchers("/home").permitAll()
             .antMatchers("/items").permitAll()
+            .antMatchers("/categories").permitAll()
+            .antMatchers("/categories/*").permitAll()
             .antMatchers("/items/**").permitAll()
             .antMatchers("/login").permitAll()
             .antMatchers("/registration").permitAll()
