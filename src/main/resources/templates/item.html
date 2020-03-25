@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Item Page</title>
+    </head>
+    <body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td><p th:text="${item.id}">Id</p></td>
+                <td><p th:text="${item.name}">Name</p></td>
+                <td><p th:text="${item.price}">Price</p></td>
+                <td><p th:text="${item.category.name}">Category</p></td>
+                <td>
+                    <form th:action="@{/delete/item/{id}(id=${item.id})}" method="get">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tbody>
+        </table>
+    </div>
+    <form th:action="@{/items}" method="get">
+        <button type="submit">Back</button>
+    </form>
+    </body>
+</html>

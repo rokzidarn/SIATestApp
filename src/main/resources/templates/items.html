@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Items Page</title>
+    </head>
+    <body>
+    <div>
+        <tr th:if="${all.empty}">
+            <br>
+            <td> No Items Available </td>
+        </tr><br>
+        <table th:if="${!all.empty}">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${all}">
+                <td><p th:text="${item.name}">Name</p></td>
+                <td><p th:text="${item.price}">Price</p></td>
+                <td><p th:text="${item.category.name}">Category</p></td>
+                <td>
+                    <form th:action="@{/items/{id}(id=${item.id})}" method="get">
+                        <button type="Submit">Details</button>
+                    </form></td>
+            </tr>
+            </tbody>
+        </table>
+        <form th:action="@{/home}" method="get">
+            <button type="Submit">Back</button>
+        </form></td>
+    </div>
+    </body>
+</html>

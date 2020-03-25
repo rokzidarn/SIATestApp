@@ -1,0 +1,11 @@
+com\example\test\service\UserService.class
+com\example\test\model\User$UserBuilder.class
+com\example\test\TestApplication.class
+com\example\test\repository\UserRepository.class
+com\example\test\model\Role$RoleBuilder.class
+com\example\test\configuration\SecurityConfiguration.class
+com\example\test\configuration\WebMvcConfig.class
+com\example\test\model\Role.class
+com\example\test\model\User.class
+com\example\test\controller\LoginController.class
+com\example\test\repository\RoleRepository.class
