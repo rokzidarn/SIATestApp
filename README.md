@@ -1,1 +1,3 @@
-test
+SIATestApp
+
+Java Spring Framework + MySQL + Thymeleaf
