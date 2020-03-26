@@ -19,7 +19,7 @@ public class RMQActionConsumer implements ActionMessagingConsumer{
     }
 
     public Action consumeAddItemAction() {  // pull method, actively check if something is in queue, if not wait 30s
-        Message message = rabbit.receive("springtest.action", 30000);  // default, queue == routing key
+        Message message = rabbit.receive("spring.action", 30000);  // default, queue == routing key
         return message != null ? (Action) converter.fromMessage(message) : null;  // must be ready for null return
     }
 

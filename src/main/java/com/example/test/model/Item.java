@@ -16,7 +16,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Table(name = "item")
-public class Item implements Serializable {
+public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

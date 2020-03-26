@@ -26,7 +26,7 @@ public class RMQActionProducer implements ActionMessagingProducer {
         MessageConverter converter = rabbit.getMessageConverter();
         MessageProperties props = new MessageProperties();
         Message message = converter.toMessage(example, props);
-        rabbit.send("springtest.action", message);  // raw message, but before must convert object to message
+        rabbit.send("spring.action", message);  // raw message, but before must convert object to message
         // using default (default exchange == ""), will deliver to queue which has the same name as routing key
     }
 }
