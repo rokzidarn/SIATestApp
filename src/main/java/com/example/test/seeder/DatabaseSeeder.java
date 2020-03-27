@@ -1,13 +1,7 @@
 package com.example.test.seeder;
 
-import com.example.test.model.Category;
-import com.example.test.model.Item;
-import com.example.test.model.Role;
-import com.example.test.model.User;
-import com.example.test.repository.CategoryRepository;
-import com.example.test.repository.ItemRepository;
-import com.example.test.repository.RoleRepository;
-import com.example.test.repository.UserRepository;
+import com.example.test.model.*;
+import com.example.test.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
@@ -15,9 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashSet;
+import java.util.*;
 
 @Component
 public class DatabaseSeeder {
@@ -26,15 +18,17 @@ public class DatabaseSeeder {
     private ItemRepository itemRepository;
     private CategoryRepository categoryRepository;
     private RoleRepository roleRepository;
+    private CatalogRepository catalogRepository;
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
     public DatabaseSeeder(UserRepository userRepository, ItemRepository itemRepository, CategoryRepository categoryRepository,
-                          RoleRepository roleRepository, JdbcTemplate jdbcTemplate) {
+                          RoleRepository roleRepository,  CatalogRepository catalogRepository, JdbcTemplate jdbcTemplate) {
         this.userRepository = userRepository;
         this.itemRepository = itemRepository;
         this.categoryRepository = categoryRepository;
         this.roleRepository = roleRepository;
+        this.catalogRepository = catalogRepository;
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -42,6 +36,7 @@ public class DatabaseSeeder {
     public void seed(ContextRefreshedEvent event) {
         seedUsersTable();
         seedItemsTable();
+        seedCatalogsTable();
     }
 
     private void seedUsersTable() {
@@ -119,5 +114,13 @@ public class DatabaseSeeder {
         i5.setCreated(new Date());
         i5.setCategory(c1);
         itemRepository.save(i5);
+    }
+
+    private void seedCatalogsTable() {
+        Catalog k1 = new Catalog();
+        k1.setName("Spring/Summer 2020 Collection");
+        k1.setNumPages(65);
+        k1.setCreated(new Date());
+        catalogRepository.save(k1);
     }
 }

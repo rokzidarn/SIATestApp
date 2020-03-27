@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Catalog</title>
+</head>
+<body>
+<h2>ADD CATALOG</h2>
+<form method="post" th:action="@{/catalogs}" th:object="${catalog}">
+    <p>Name:</p>
+    <input type="text" th:field="*{name}"/>
+    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
+    <p>Price:</p>
+    <input type="text" th:field="*{numPages}"/>
+    <p th:if="${#fields.hasErrors('numPages')}" th:errors="*{numPages}">Pages Error</p>
+    <br>
+    <input type="submit" value="Add"/>
+</form>
+</body>
+</html>

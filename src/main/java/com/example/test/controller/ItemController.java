@@ -60,7 +60,7 @@ public class ItemController {
         modelAndView.addObject("item", item);
         List<Category> categories = categoryService.findAllCategories();
         modelAndView.addObject("categories", categories);
-        modelAndView.setViewName("add");
+        modelAndView.setViewName("item_add");
 
         return modelAndView;
     }
@@ -68,7 +68,7 @@ public class ItemController {
     @RequestMapping(method = RequestMethod.POST, path = "/add/item")
     public String processAdd(@Valid Item item, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "add";
+            return "item_add";
         }
 
         itemService.saveItem(item);

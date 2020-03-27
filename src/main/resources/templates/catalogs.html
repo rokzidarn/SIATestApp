@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Catalogs Page</title>
+</head>
+<body>
+<div>
+    <tr th:if="${all.empty}">
+        <br>
+        <td> No Catalogs Available </td>
+    </tr><br>
+    <table th:if="${!all.empty}">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Number of Pages</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="catalog : ${all}">
+            <td><p th:text="${catalog.name}">Name</p></td>
+            <td><p th:text="${catalog.numPages}">Number of Pages</p></td>
+            <td>
+                <form th:action="@{/catalogs/{id}(id=${catalog.id})}" method="get">
+                    <button type="Submit">Details</button>
+                </form></td>
+        </tr>
+        </tbody>
+    </table>
+    <form th:action="@{/home}" method="get">
+        <button type="Submit">Back</button>
+    </form></td>
+</div>
+</body>
+</html>

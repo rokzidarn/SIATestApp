@@ -10,7 +10,7 @@ package com.example.test.graphql;
         import java.util.Optional;
 
 @Component
-public class CategoryQuery implements GraphQLQueryResolver {
+public class CategoryQuery implements GraphQLQueryResolver{
     @Autowired
     private CategoryService categoryService;
 

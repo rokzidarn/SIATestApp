@@ -41,9 +41,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-            .antMatchers("/add/item").permitAll() // TODO: .hasRole("USER").anyRequest().authenticated()
-            .antMatchers("/delete/item/*").permitAll()
-
             .antMatchers("/graphiql").permitAll()
             .antMatchers("/action/*").permitAll()
             .antMatchers("/api").permitAll()
@@ -54,10 +51,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/items").permitAll()
             .antMatchers("/categories").permitAll()
             .antMatchers("/categories/*").permitAll()
+            .antMatchers("/catalogs").permitAll()
+            .antMatchers("/catalogs/*").permitAll()
             .antMatchers("/items/**").permitAll()
+
             .antMatchers("/login").permitAll()
             .antMatchers("/registration").permitAll()
 
+            .antMatchers("/add/item").hasAuthority("USER").anyRequest().authenticated()
+            .antMatchers("/delete/item").hasAuthority("USER").anyRequest().authenticated()
             .antMatchers("/user/**").hasAuthority("USER").anyRequest()
             .authenticated().and().csrf().disable().formLogin()
             .loginPage("/login").failureUrl("/login?error=true")

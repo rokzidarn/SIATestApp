@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Catalog Page</title>
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Number of pages</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td><p th:text="${catalog.id}">Id</p></td>
+        <td><p th:text="${catalog.name}">Name</p></td>
+        <td><p th:text="${catalog.numPages}">Number of pages</p></td>
+        </tbody>
+    </table>
+</div>
+<form th:action="@{/catalogs}" method="get">
+    <button type="submit">Back</button>
+</form>
+</body>
+</html>
