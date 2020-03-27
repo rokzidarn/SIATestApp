@@ -44,6 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/add/item").permitAll() // TODO: .hasRole("USER").anyRequest().authenticated()
             .antMatchers("/delete/item/*").permitAll()
 
+            .antMatchers("/graphiql").permitAll()
             .antMatchers("/action/*").permitAll()
             .antMatchers("/api").permitAll()
             .antMatchers("/api/*").permitAll()
