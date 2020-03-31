@@ -1,3 +1,10 @@
-SIATestApp
+#SIATestApp
 
-Java Spring Framework + MySQL + Thymeleaf
+####Java Spring Framework
+####Thymeleaf
+####MySQL + JPA
+####REST
+####RabbitMQ
+####GraphQL
+####WebFlux
+
