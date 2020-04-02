@@ -47,25 +47,15 @@ public class UserServiceTest {
 
     @Test
     public void testFindUserByEmail() {
-        // Setup
         final String email = "test@test.com";
-
-        // Run the test
         final User result = userServiceUnderTest.findUserByEmail(email);
-
-        // Verify the results
         assertEquals(email, result.getEmail());
     }
 
     @Test
     public void testSaveUser() {
-        // Setup
         final String email = "test@test.com";
-
-        // Run the test
         User result = userServiceUnderTest.saveUser(User.builder().build());
-
-        // Verify the results
         assertEquals(email, result.getEmail());
     }
 }

@@ -22,6 +22,5 @@ public class RMQActionConsumer implements ActionMessagingConsumer{
         Message message = rabbit.receive("spring.action", 30000);  // default, queue == routing key
         return message != null ? (Action) converter.fromMessage(message) : null;  // must be ready for null return
     }
-
     // push method, listener passively waits until something comes into queue, then start consuming
 }

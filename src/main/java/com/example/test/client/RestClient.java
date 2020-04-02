@@ -1,7 +1,6 @@
 package com.example.test.client;
 
 import com.example.test.model.Category;
-import com.example.test.model.Item;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

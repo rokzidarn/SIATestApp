@@ -26,7 +26,7 @@ public class RestResource {
     @Bean
     public CommandLineRunner runClient(RestClient restClient) {
         return args -> {
-            log.info("REST CLIENT");
+            // log.info("REST CLIENT");
             // log.info("Category OBJ:  " + restClient.getCategoryByIdOBJ(5));
             // log.info("Category JSON:  " + restClient.getCategoryByIdJSON(5));
         };

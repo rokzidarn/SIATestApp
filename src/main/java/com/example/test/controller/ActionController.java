@@ -19,7 +19,7 @@ import java.util.Date;
 public class ActionController {
 
     private final RMQActionProducer rmqProducer;  // http://localhost:15672/mgmt
-    private final RMQActionConsumer rmqConsumer;  // guest/guest
+    private final RMQActionConsumer rmqConsumer;  // credentials: guest/guest
 
     @Autowired
     FileWriterGateway gateway;

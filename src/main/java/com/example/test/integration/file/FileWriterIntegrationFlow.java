@@ -19,11 +19,13 @@ public class FileWriterIntegrationFlow {
         return text -> text.toUpperCase();
     }
 
-    /* @Bean
-    @Filter(inputChannel="numberFilterChannel", outputChannel="evenNumberChannel")
+    /*
+    @Bean
+    @Filter(inputChannel="numberFilterChannel", outputChannel="evenNumberChannel")  // filter example
     public boolean evenNumberFilter(Integer number) {
         return number % 2 == 0;
-    } */
+    }
+    */
 
     @Bean
     @ServiceActivator(inputChannel="fileWriterChannel")  // receives text from transformer, writes to file

@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @SpringBootApplication
-public class TestApplication {
+public class TestApplication {  // https://github.com/habuma/spring-in-action-5-samples
 
     public static void main(String[] args) {
         SpringApplication.run(TestApplication.class, args);
