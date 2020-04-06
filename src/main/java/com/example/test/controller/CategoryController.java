@@ -9,10 +9,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path="/categories", produces="application/json")
+@RequestMapping(produces="application/json")
 @CrossOrigin(origins="*")
 public class CategoryController {
 
@@ -22,13 +23,18 @@ public class CategoryController {
         this.categoryRepository = categoryRepository;
     }
 
-    @GetMapping("/recent")
+    @GetMapping("/categories")
+    public List<Category> allCategories() {
+        return categoryRepository.findAll();
+    }
+
+    @GetMapping("/categories/recent")
     public Iterable<Category> recentCategories() {
         PageRequest page = PageRequest.of(0, 2, Sort.by("created").descending());
         return categoryRepository.findAll(page).getContent();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/categories/{id}")
     public ResponseEntity<Category> categoryById(@PathVariable("id") int id) {
         Optional<Category> optCategory = categoryRepository.findById(id);
         if (optCategory.isPresent()) {
@@ -37,7 +43,7 @@ public class CategoryController {
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping(consumes="application/json")
+    @PostMapping(path="/categories", consumes="application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public Category addCategory(@RequestBody Category category) {
         return categoryRepository.save(category);
@@ -49,7 +55,7 @@ public class CategoryController {
     }
     */
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/categories/{id}")
     @ResponseStatus(code=HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable("id") int id) {
         try {
