@@ -15,8 +15,15 @@ class CategoryDataService {
         return axios.get(`${API_URL}/categories/${id}`);
     }
 
-    addCategory(name) {
-          return axios.post(`${API_URL}/categories`, name);
+    addCategory(cname) {
+        let config = {
+          headers: {
+              'Content-Type': 'application/json;charset=UTF-8',
+              "Access-Control-Allow-Origin": "*",
+          }
+        };
+
+         return axios.post(`${API_URL}/categories`, { name: cname }, config);
     }
 }
 
