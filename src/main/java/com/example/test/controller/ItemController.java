@@ -20,7 +20,7 @@ public class ItemController {
     @Autowired
     private ItemService itemService;
 
-    @Autowired
+    @Autowired  // bean injection
     private CategoryService categoryService;
 
     @RequestMapping(method = RequestMethod.GET, path = "/items")
@@ -28,7 +28,7 @@ public class ItemController {
         ModelAndView modelAndView = new ModelAndView();
         List<Item> all = itemService.findAllItems();
         modelAndView.addObject("all", all);
-        modelAndView.setViewName("items");
+        modelAndView.setViewName("items");  // Thymeleaf template for frontend
 
         return modelAndView;
     }
@@ -67,7 +67,7 @@ public class ItemController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/add/item")
     public String processAdd(@Valid Item item, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors()) {  // just database validation
             return "item_add";
         }
 

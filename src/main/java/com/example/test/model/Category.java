@@ -34,7 +34,7 @@ public class Category {
         this.created = new Date();
     }
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "category")
+    @JsonIgnore  // solves infinite loop when serializing
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)  // if category is deleted, all items from this category will be also
     private List<Item> items;
 }

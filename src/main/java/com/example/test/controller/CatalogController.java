@@ -59,7 +59,7 @@ public class CatalogController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/catalogs")
     public String processAddCatalog(@Valid Catalog catalog, BindingResult bindingResult) {
-        validator.validate(catalog, bindingResult);
+        validator.validate(catalog, bindingResult);  // custom validator
 
         if (bindingResult.hasErrors()) {
             return "catalog_add";

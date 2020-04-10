@@ -20,7 +20,7 @@ public class HomeControllerTests {
     @Autowired
     private MockMvc mockMvc;
     @Test
-    public void testHomePage() throws Exception {
+    public void testHomePage() throws Exception {  // basic unit test
         mockMvc.perform(get("/home"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("home"))

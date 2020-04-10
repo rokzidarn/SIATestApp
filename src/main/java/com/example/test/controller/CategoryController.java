@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(produces="application/json")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins="*")  // CORS, enables React frontend to call backend API from http://localhost:3000
 public class CategoryController {
 
     private CategoryRepository categoryRepository;

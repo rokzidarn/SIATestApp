@@ -23,7 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
-    @Value("${spring.queries.users-query}")
+    @Value("${spring.queries.users-query}")  // get config value from application.properties
     private String usersQuery;
 
     @Value("${spring.queries.roles-query}")

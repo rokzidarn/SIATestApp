@@ -3,8 +3,8 @@
 Java Spring Framework<br/>
 Thymeleaf<br/>
 MySQL + JPA<br/>
-REST<br/>
+REST + GraphQL<br/>
 RabbitMQ<br/>
-GraphQL<br/>
 WebFlux<br/>
 Cassandra<br/>
+React + Axios + Formik<br/>

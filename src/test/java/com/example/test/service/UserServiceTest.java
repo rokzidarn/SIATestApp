@@ -27,7 +27,7 @@ public class UserServiceTest {
     private User user;
 
     @Before
-    public void setUp() {
+    public void setUp() {  // unit test
         initMocks(this);
         userServiceUnderTest = new UserService(mockUserRepository,
                                                mockRoleRepository,

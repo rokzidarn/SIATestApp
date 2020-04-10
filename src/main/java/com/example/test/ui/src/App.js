@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CategoryListComponent from './component/CategoryListComponent';
 import CategoryAddComponent from './component/CategoryAddComponent';
+import Hello from './Hello';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // https://dzone.com/articles/creating-spring-boot-and-react-crud-full-stack-app
@@ -14,11 +15,12 @@ class App extends Component {
           return (
               <Router>
                   <>
-                      <h1>Category Endpoint</h1>
+                      <h1>React</h1>
                       <Switch>
                           <Route path="/" exact component={CategoryListComponent} />
                           <Route path="/categories" exact component={CategoryListComponent} />
                           <Route path="/categories/add" component={CategoryAddComponent} />
+                          <Route path="/hello" component={Hello} />
                       </Switch>
                   </>
               </Router>

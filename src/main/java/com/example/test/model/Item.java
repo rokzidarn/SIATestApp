@@ -15,7 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Table(name = "item")
-public class Item {
+public class Item {  // Hibernate is JPA implementation of ORM
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,7 +38,7 @@ public class Item {
         this.created = new Date();
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)  // all items in this category will be fetched when needed, not right away (EAGER)
+    @JoinColumn(name = "category_id", nullable = false)  // cannot create an item without a category
     private Category category;
 }
