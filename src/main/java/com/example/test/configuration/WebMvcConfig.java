@@ -1,9 +1,10 @@
 package com.example.test.configuration;
 
+import com.example.test.interceptor.MeasureTimeInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -21,4 +22,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("home");
     }
 
+    @Bean
+    public MeasureTimeInterceptor measurementInterceptor() {
+        return new MeasureTimeInterceptor();
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(measurementInterceptor()).addPathPatterns("/home*");
+    }
 }
