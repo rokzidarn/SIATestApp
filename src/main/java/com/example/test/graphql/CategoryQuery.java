@@ -1,13 +1,13 @@
 package com.example.test.graphql;
 
-        import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-        import com.example.test.model.Category;
-        import com.example.test.service.CategoryService;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.stereotype.Component;
+import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import com.example.test.model.Category;
+import com.example.test.service.CategoryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-        import java.util.List;
-        import java.util.Optional;
+import java.util.List;
+import java.util.Optional;
 
 @Component
 public class CategoryQuery implements GraphQLQueryResolver{

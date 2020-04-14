@@ -16,7 +16,8 @@ public class TestApplication {
         logger.info("Hello SIATestApp!");
     }
 
-    // @Configuration, @Bean, @Component, @Repository, @Service, @Controller, @Autowired, @Resource, @Inject, @Scope
-    // @RequestMapping, @PathVariable, @RequestParam, @Valid, @CrossOrigin, @RequestBody, @ResponseStatus
-    // 
+    // @Configuration, @Bean, @Component, @Service, @Autowired, @Resource, @Inject, @Value, @Scope, @Slf4j
+    // @Controller, @RequestMapping, @PathVariable, @RequestParam, @Valid, @CrossOrigin, @RequestBody, @ResponseStatus
+    // @Transactional, @Repository, @Data, @Document, @Table, @UserDefinedType, @Builder, @Entity
+    // @MessagingGateway,  @Transformer,  @ServiceActivator, @EventListener, @Test, @Mock, @Before
 }

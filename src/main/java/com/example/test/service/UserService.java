@@ -31,6 +31,8 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
+    // @Transactional(propagation = Propagation.REQUIRED)  // classic transaction
+    // @Transactional(propagation = Propagation.REQUIRES_NEW)  // transaction broken down in pieces
     public User saveUser(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         user.setActive(1);

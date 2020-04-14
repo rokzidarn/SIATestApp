@@ -32,13 +32,13 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.test.controller" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Rok\IdeaProjects\test\src\main\java\com\example\test\ux\src\component" />
       <recent name="C:\Users\Rok\IdeaProjects\test\src\main\resources\templates" />
       <recent name="C:\Users\Rok\IdeaProjects\test\src\main\resources\templates\item" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.test.controller" />
     </key>
   </component>
   <component name="RunManager" selected="Application.TestApplication">
@@ -179,10 +179,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="511" y="216" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1586187599109" />
-    <state x="433" y="339" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586421033735">
+    <state x="433" y="339" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1586859466665">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="433" y="339" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1586421033735" />
+    <state x="433" y="339" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1586859466665" />
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585304183907">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -191,22 +191,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1579895393412" />
-    <state width="1493" height="276" key="GridCell.Tab.0.bottom" timestamp="1586703182499">
+    <state width="1493" height="276" key="GridCell.Tab.0.bottom" timestamp="1586859827438">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586703182499" />
-    <state width="1493" height="276" key="GridCell.Tab.0.center" timestamp="1586703182499">
+    <state width="1493" height="276" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586859827438" />
+    <state width="1493" height="276" key="GridCell.Tab.0.center" timestamp="1586859827438">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586703182499" />
-    <state width="1493" height="276" key="GridCell.Tab.0.left" timestamp="1586703182498">
+    <state width="1493" height="276" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586859827438" />
+    <state width="1493" height="276" key="GridCell.Tab.0.left" timestamp="1586859827437">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586703182498" />
-    <state width="1493" height="276" key="GridCell.Tab.0.right" timestamp="1586703182499">
+    <state width="1493" height="276" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586859827437" />
+    <state width="1493" height="276" key="GridCell.Tab.0.right" timestamp="1586859827438">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586703182499" />
+    <state width="1493" height="276" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586859827438" />
     <state width="1493" height="431" key="GridCell.Tab.1.bottom" timestamp="1578330037287">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

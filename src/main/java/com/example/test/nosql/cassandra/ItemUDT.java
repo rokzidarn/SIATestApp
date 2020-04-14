@@ -1,4 +1,4 @@
-package com.example.test.cassandra;
+package com.example.test.nosql.cassandra;
 
 /*
 
