@@ -48,15 +48,35 @@ public class DatabaseSeeder {
         role2.setRole("ADMIN");
         roleRepository.save(role2);
 
-        User user = new User();
-        user.setEmail("rok.zidarn@gmail.com");
-        user.setFirstName("Rok");
-        user.setLastName("Zidarn");
-        user.setPassword(new BCryptPasswordEncoder().encode("test123"));
-        Role userRole = roleRepository.findByRole("USER");
-        user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
-        user.setActive(1);
-        userRepository.save(user);
+        User admin = new User();
+        admin.setEmail("admin@gmail.com");
+        admin.setFirstName("Admin");
+        admin.setLastName("Admin");
+        admin.setPassword(new BCryptPasswordEncoder().encode("admin1111"));
+        Role adminRole = roleRepository.findByRole("ADMIN");
+        admin.setRoles(new HashSet<Role>(Arrays.asList(adminRole)));
+        admin.setActive(1);
+        userRepository.save(admin);
+
+        User user1 = new User();
+        user1.setEmail("rok.zidarn@gmail.com");
+        user1.setFirstName("Rok");
+        user1.setLastName("Zidarn");
+        user1.setPassword(new BCryptPasswordEncoder().encode("test123"));
+        Role userRole1 = roleRepository.findByRole("USER");
+        user1.setRoles(new HashSet<Role>(Arrays.asList(userRole1)));
+        user1.setActive(1);
+        userRepository.save(user1);
+
+        User user2 = new User();
+        user2.setEmail("janez.novak@gmail.com");
+        user2.setFirstName("Janez");
+        user2.setLastName("Novak");
+        user2.setPassword(new BCryptPasswordEncoder().encode("geslo456"));
+        Role userRole2 = roleRepository.findByRole("USER");
+        user2.setRoles(new HashSet<Role>(Arrays.asList(userRole2)));
+        user2.setActive(1);
+        userRepository.save(user2);
     }
 
     private void seedItemsTable() {

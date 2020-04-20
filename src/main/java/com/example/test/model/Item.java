@@ -1,5 +1,6 @@
 package com.example.test.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,7 +29,7 @@ public class Item {  // Hibernate is JPA implementation of ORM
     private String name;
 
     @NotNull(message = "Please provide item price!")
-    @Min(value=1, message="Price must be at least $1!")
+    @Min(value=5, message="Price must be at least $5!")
     @Column(name = "price")
     private int price;
 
@@ -38,6 +39,7 @@ public class Item {  // Hibernate is JPA implementation of ORM
         this.created = new Date();
     }
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)  // all items in this category will be fetched when needed, not right away (EAGER)
     @JoinColumn(name = "category_id", nullable = false)  // cannot create an item without a category
     private Category category;

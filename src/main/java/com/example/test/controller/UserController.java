@@ -9,9 +9,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.security.Principal;
 
 @Controller
 public class UserController {
@@ -61,9 +64,25 @@ public class UserController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject("userName", "Hello " + user.getFirstName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
-        modelAndView.setViewName("user");
+        modelAndView.setViewName("user_home");
         return modelAndView;
     }
 
+    @RequestMapping(value="/user/{id}", method = RequestMethod.GET)
+    public ModelAndView userById(@PathVariable int id, Principal principal){
+        ModelAndView modelAndView = new ModelAndView();
+        User user = userService.findUserByEmail(principal.getName());
+
+        if(user != null && user.getId() == id){
+            User data = userService.findUserById(id);
+            modelAndView.addObject("data", data);
+            modelAndView.setViewName("user");
+        }
+        else {
+            modelAndView.setViewName("error");
+        }
+
+        return modelAndView;
+    }
 
 }

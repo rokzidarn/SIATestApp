@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>User Home</title>
+    </head>
+    <body>
+        <div>
+            <form th:action="@{/logout}" method="post">
+                <button name="logout" type="Submit">Logout</button>
+            </form>
+            <div>
+                <div>
+                    <div><p th:utext="${userName}"></p></div>
+                </div>
+                <form th:action="@{/add/item}" method="get">
+                    <button type="Submit">Add Item</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

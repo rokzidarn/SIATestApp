@@ -31,6 +31,10 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
+    public User findUserById(int id) {
+        return userRepository.findById(id);
+    }
+
     // @Transactional(propagation = Propagation.REQUIRED)  // classic transaction
     // @Transactional(propagation = Propagation.REQUIRES_NEW)  // transaction broken down in pieces
     public User saveUser(User user) {

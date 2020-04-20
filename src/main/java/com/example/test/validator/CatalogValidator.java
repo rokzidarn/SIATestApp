@@ -15,9 +15,9 @@ public class CatalogValidator implements Validator {
     public void validate(Object obj, Errors e) {
         Catalog c = (Catalog) obj;
 
-        if (c.getNumPages() < 0) {
+        if (c.getNumPages() <= 0) {
             e.rejectValue("numPages", "number.of.pages.not.negative", "Number of pages cannot be negative!");
-        } else if (c.getName().length() > 10) {
+        } else if (c.getName().length() > 30) {
             e.rejectValue("name", "name.too.long", "Name too long!");
         } else if (c.getName().length() == 0) {
             e.rejectValue("name", "name.too.short", "Name too short!");

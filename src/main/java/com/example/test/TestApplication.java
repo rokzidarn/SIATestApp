@@ -20,4 +20,9 @@ public class TestApplication {
     // @Controller, @RequestMapping, @PathVariable, @RequestParam, @Valid, @CrossOrigin, @RequestBody, @ResponseStatus
     // @Transactional, @Repository, @Data, @Document, @Table, @UserDefinedType, @Builder, @Entity
     // @MessagingGateway,  @Transformer,  @ServiceActivator, @EventListener, @Test, @Mock, @Before
+
+    // TODO: implement Order functionality
+    // TODO: set up admin access, disable user access
+    // TODO: controller/ : custom Item validator, ManyToMany relationship Catalog<->Item
+    // TODO: resources/ : set views for other endpoints (Thymeleaf or React)
 }

@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -39,8 +40,14 @@ public class CatalogController {
     public ModelAndView catalogById(@PathVariable int id){
         ModelAndView modelAndView = new ModelAndView();
         Catalog catalog = catalogService.findCatalogById(id);
-        modelAndView.addObject("catalog", catalog);
-        modelAndView.setViewName("catalog");
+
+        if(catalog == null){
+            modelAndView.setViewName("error");
+        }
+        else {
+            modelAndView.addObject("catalog", catalog);
+            modelAndView.setViewName("catalog");
+        }
 
         return modelAndView;
     }
@@ -57,7 +64,7 @@ public class CatalogController {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/catalogs")
-    public String processAddCatalog(@Valid Catalog catalog, BindingResult bindingResult) {
+    public String processAddCatalog(@Valid Catalog catalog, BindingResult bindingResult, SessionStatus sessionStatus) {
         validator.validate(catalog, bindingResult);  // custom validator
 
         if (bindingResult.hasErrors()) {
@@ -65,6 +72,7 @@ public class CatalogController {
         }
 
         catalogService.saveCatalog(catalog);
+        sessionStatus.setComplete();
         return "redirect:/catalogs";
     }
 }

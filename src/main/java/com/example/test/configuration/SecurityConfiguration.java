@@ -45,7 +45,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     // @PreAuthorize("hasAuthority('USER')")
     // @PostFilter("hasAnyAuthority('ADMIN') or filterObject.owner == authentication.name")
     // @EnableGlobalMethodSecurity(prePostEnabled=true)
-    // @Bean public AclPermissionEvaluator permissionEvaluator() {return new AclPermissionEvaluator(jdbcMutableAclService());}
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

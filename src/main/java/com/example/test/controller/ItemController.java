@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -37,8 +38,14 @@ public class ItemController {
     public ModelAndView itemById(@PathVariable int id){
         ModelAndView modelAndView = new ModelAndView();
         Item item = itemService.findItemById(id);
-        modelAndView.addObject("item", item);
-        modelAndView.setViewName("item");
+
+        if(item == null){
+            modelAndView.setViewName("error");
+        }
+        else {
+            modelAndView.addObject("item", item);
+            modelAndView.setViewName("item");
+        }
 
         return modelAndView;
     }
@@ -66,12 +73,13 @@ public class ItemController {
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/add/item")
-    public String processAdd(@Valid Item item, BindingResult bindingResult) {
+    public String processAdd(@Valid Item item, BindingResult bindingResult, SessionStatus sessionStatus) {
         if (bindingResult.hasErrors()) {  // just database validation
             return "item_add";
         }
 
         itemService.saveItem(item);
+        sessionStatus.setComplete();
         return "redirect:/items";
     }
 
