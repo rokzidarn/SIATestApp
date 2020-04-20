@@ -52,7 +52,7 @@ public class DatabaseSeeder {
         admin.setEmail("admin@gmail.com");
         admin.setFirstName("Admin");
         admin.setLastName("Admin");
-        admin.setPassword(new BCryptPasswordEncoder().encode("admin1111"));
+        admin.setPassword(new BCryptPasswordEncoder().encode("admin000"));
         Role adminRole = roleRepository.findByRole("ADMIN");
         admin.setRoles(new HashSet<Role>(Arrays.asList(adminRole)));
         admin.setActive(1);

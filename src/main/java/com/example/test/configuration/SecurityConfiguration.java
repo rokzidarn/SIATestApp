@@ -63,13 +63,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/login").permitAll()
             .antMatchers("/registration").permitAll()
 
-            .antMatchers("/add/item").hasAuthority("USER").anyRequest().authenticated()
-            .antMatchers("/delete/item").hasAuthority("USER").anyRequest().authenticated()
+            .antMatchers("/add/item").hasAuthority("ADMIN").anyRequest().authenticated()
+            .antMatchers("/delete/item").hasAuthority("ADMIN").anyRequest().authenticated()
 
-            .antMatchers("/user/**").hasAuthority("USER").anyRequest().authenticated()
+            .antMatchers("/users/**").hasAuthority("USER").anyRequest().authenticated()
             .and().formLogin()
             .loginPage("/login").failureUrl("/login?error=true")
-            .defaultSuccessUrl("/user/home")
+            .defaultSuccessUrl("/users/home")
             .usernameParameter("email")
             .passwordParameter("password")
             .and().logout()

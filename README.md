@@ -1,6 +1,6 @@
 # SIATestApp
 
-My basic web application developed using Java and Spring
+My basic web application developed using Java and Spring with some additional technologies and software.
 
 ### Techstack
 ```

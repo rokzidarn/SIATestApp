@@ -39,7 +39,6 @@ public class Item {  // Hibernate is JPA implementation of ORM
         this.created = new Date();
     }
 
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)  // all items in this category will be fetched when needed, not right away (EAGER)
     @JoinColumn(name = "category_id", nullable = false)  // cannot create an item without a category
     private Category category;

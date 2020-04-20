@@ -4,6 +4,7 @@ import com.example.test.model.Category;
 import com.example.test.model.Item;
 import com.example.test.service.CategoryService;
 import com.example.test.service.ItemService;
+import com.example.test.validator.ItemValidator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,9 @@ public class ItemController {
 
     @Autowired  // bean injection
     private CategoryService categoryService;
+
+    @Autowired
+    private ItemValidator validator;
 
     @RequestMapping(method = RequestMethod.GET, path = "/items")
     public ModelAndView itemsAll(){
@@ -74,7 +78,9 @@ public class ItemController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/add/item")
     public String processAdd(@Valid Item item, BindingResult bindingResult, SessionStatus sessionStatus) {
-        if (bindingResult.hasErrors()) {  // just database validation
+        validator.validate(item, bindingResult);
+
+        if (bindingResult.hasErrors()) {
             return "item_add";
         }
 

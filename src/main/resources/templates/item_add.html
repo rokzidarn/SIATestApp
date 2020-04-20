@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <title>Add Item</title>
 </head>
 <body>
@@ -22,6 +23,9 @@
         </div>
         <br>
         <input type="submit" value="Add"/>
+    </form><br>
+    <form th:action="@{/home}" method="get">
+        <button type="Submit">Go To Home Page</button>
     </form>
 </body>
 </html>
