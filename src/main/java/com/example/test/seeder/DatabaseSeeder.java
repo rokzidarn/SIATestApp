@@ -36,7 +36,6 @@ public class DatabaseSeeder {
     public void seed(ContextRefreshedEvent event) {
         seedUsersTable();
         seedItemsTable();
-        seedCatalogsTable();
     }
 
     private void seedUsersTable() {
@@ -134,13 +133,12 @@ public class DatabaseSeeder {
         i5.setCreated(new Date());
         i5.setCategory(c1);
         itemRepository.save(i5);
-    }
 
-    private void seedCatalogsTable() {
         Catalog k1 = new Catalog();
         k1.setName("Spring/Summer 2020 Collection");
         k1.setNumPages(65);
         k1.setCreated(new Date());
+        k1.setItems(Arrays.asList(i1, i2, i4));
         catalogRepository.save(k1);
     }
 }

@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
@@ -42,4 +44,7 @@ public class Item {  // Hibernate is JPA implementation of ORM
     @ManyToOne(fetch = FetchType.LAZY)  // all items in this category will be fetched when needed, not right away (EAGER)
     @JoinColumn(name = "category_id", nullable = false)  // cannot create an item without a category
     private Category category;
+
+    @ManyToMany(mappedBy = "items")
+    List<Catalog> catalogs;
 }

@@ -1,6 +1,7 @@
 package com.example.test.controller;
 
 import com.example.test.model.Catalog;
+import com.example.test.model.Item;
 import com.example.test.service.CatalogService;
 import com.example.test.validator.CatalogValidator;
 import lombok.extern.slf4j.Slf4j;
@@ -45,7 +46,9 @@ public class CatalogController {
             modelAndView.setViewName("error");
         }
         else {
+            List<Item> items = catalog.getItems();
             modelAndView.addObject("catalog", catalog);
+            modelAndView.addObject("items", items);
             modelAndView.setViewName("catalog");
         }
 

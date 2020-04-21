@@ -11,12 +11,31 @@
             <th>Id</th>
             <th>Name</th>
             <th>Number of pages</th>
+            <th>Items</th>
         </tr>
         </thead>
         <tbody>
         <td><p th:text="${catalog.id}">Id</p></td>
         <td><p th:text="${catalog.name}">Name</p></td>
         <td><p th:text="${catalog.numPages}">Number of pages</p></td>
+        <td>
+            <table th:if="${!items.empty}">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item : ${items}">
+                        <td><p th:text="${item.name}">Name</p></td>
+                        <td><p th:text="${item.price}">Price</p></td>
+                        <td><p th:text="${item.category.name}">Category</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
         </tbody>
     </table>
 </div>

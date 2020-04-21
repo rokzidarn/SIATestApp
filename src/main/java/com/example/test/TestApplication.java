@@ -21,5 +21,5 @@ public class TestApplication {
     // @Transactional, @Repository, @Data, @Document, @Table, @UserDefinedType, @Builder, @Entity
     // @MessagingGateway,  @Transformer,  @ServiceActivator, @EventListener, @Test, @Mock, @Before
 
-    // TODO: implement Order functionality, ManyToMany relationship Catalog<->Item
+    // TODO: implement Order functionality
 }
