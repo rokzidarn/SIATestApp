@@ -51,6 +51,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
             .antMatchers("/graphiql").permitAll()
             .antMatchers("/action/*").permitAll()
+            .antMatchers("/event/*").permitAll()
             .antMatchers("/react/*").permitAll()
             .antMatchers("/api/**").permitAll()
 

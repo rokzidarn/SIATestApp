@@ -1,4 +1,4 @@
-package com.example.test.rabbitmq;
+package com.example.test.messaging.rabbitmq;
 
 public interface ActionMessagingConsumer {
     Action consumeAddItemAction();

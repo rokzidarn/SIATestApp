@@ -1,8 +1,8 @@
 package com.example.test.controller;
 
-import com.example.test.rabbitmq.Action;
-import com.example.test.rabbitmq.RMQActionConsumer;
-import com.example.test.rabbitmq.RMQActionProducer;
+import com.example.test.messaging.rabbitmq.Action;
+import com.example.test.messaging.rabbitmq.RMQActionConsumer;
+import com.example.test.messaging.rabbitmq.RMQActionProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

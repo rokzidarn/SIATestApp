@@ -1,4 +1,4 @@
-package com.example.test.rabbitmq;
+package com.example.test.messaging.rabbitmq;
 
 import lombok.Data;
 

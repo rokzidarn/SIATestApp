@@ -8,7 +8,7 @@ Java Spring Framework
 Thymeleaf
 MySQL + Hibernate
 REST + GraphQL
-RabbitMQ
+RabbitMQ + Kafka
 WebFlux
 Cassandra + MongoDB
 React + Axios + Formik

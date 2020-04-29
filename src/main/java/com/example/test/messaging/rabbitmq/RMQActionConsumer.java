@@ -1,4 +1,4 @@
-package com.example.test.rabbitmq;
+package com.example.test.messaging.rabbitmq;
 
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
