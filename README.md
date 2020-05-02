@@ -12,10 +12,11 @@ RabbitMQ + Kafka
 WebFlux
 Cassandra + MongoDB
 React + Axios + Formik
+OAuth2
 ```
 
 ### Requirements
-+ install IntelliJ, Java, Maven, MySQL Workbench, RabbitMQ (Erl), (Cassandra, MongoDB), NodeJS
++ install IntelliJ, Java, Maven, MySQL Workbench, RabbitMQ (Erl), Kafka, (Cassandra, MongoDB), NodeJS
 + create MySQL database named "test" with credentials "root/root"
 + open project in your IDE (IntelliJ)
 + connect to database, run file found in "/src/main/java/com/example/test/TestApplication.java"
