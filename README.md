@@ -13,6 +13,7 @@ WebFlux
 Cassandra + MongoDB
 React + Axios + Formik
 OAuth2
+Spring Microservices
 ```
 
 ### Requirements
@@ -21,3 +22,4 @@ OAuth2
 + open project in your IDE (IntelliJ)
 + connect to database, run file found in "/src/main/java/com/example/test/TestApplication.java"
 + backend available at localhost:8080, frontend at localhost:3000
++ OAuth2 and Microservices projects added as zip files
